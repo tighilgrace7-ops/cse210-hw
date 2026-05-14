@@ -5,52 +5,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<int> numbers = new List<int>();
+        Console.Write("What is the magic number? ");
+        int magicNumber = int.Parse(Console.ReadLine() ?? "0");
 
-        int userNumber = -1;
+        int guess = -1;
 
-        //Display this once
-        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
-
-        // Loop for numbers
-        while (userNumber != 0)
+        while (guess != magicNumber)
         {
-            Console.Write("Enter number: ");
+            Console.Write("What is your guess? ");
+            guess = int.Parse(Console.ReadLine() ?? "0");
 
-            userNumber = int.Parse(Console.ReadLine()); 
-
-            // Do not add 0
-            if (userNumber != 0)
+            if (guess < magicNumber)
             {
-                numbers.Add(userNumber);
+                Console.WriteLine("Higher");
             }
-        }
-
-        // Find the sum
-        int sum = 0;
-
-        foreach (int number in numbers)
-        {
-            sum += number;
-        }
-
-        Console.WriteLine($"The sum is: {sum}");
-
-        // Find the average
-        float average = (float)sum / numbers.Count;
-
-        Console. WriteLine($"The average is: {average}");
-
-        // Find the largest number
-        int max = numbers[0];
-
-        foreach (int number in numbers)
-        {
-            if (number > max)
+            else if (guess > magicNumber)
             {
-                max = number;
+                Console.WriteLine("Lower");
             }
+            else
+            {
+                Console.WriteLine("You guessed it!");
+            }
+            
         }
-        Console.WriteLine($"The largest number is: {max}");
     }
 }
