@@ -9,7 +9,7 @@ class Program
         // Computer generates random number (REQUIRED)
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101);
-
+        
         int guess = -1;
 
         // Loop untill correct guess
