@@ -1,15 +1,18 @@
 using System;
 using System.ComponentModel;
+using System.Security.Cryptography;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number? ");
-        int magicNumber = int.Parse(Console.ReadLine() ?? "0");
+        // Computer generates random number (REQUIRED)
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1, 101);
 
         int guess = -1;
 
+        // Loop untill correct guess
         while (guess != magicNumber)
         {
             Console.Write("What is your guess? ");
