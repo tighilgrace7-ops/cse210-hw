@@ -4,26 +4,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter your grade percentage: ");
+        Console.Write("What is your grade percentage? ");
 
-        int grade = int.Parse(Console.ReadLine());
+        string answer = Console.ReadLine() ?? "0";
+        int percent = int.Parse(answer);
 
         string letter = "";
-        string sign ="";
-
-        if (grade >= 90)
+        
+        // Determine letter grade
+        if (percent >= 90)
         {
             letter = "A";
         }
-        else if (grade >= 80)
+        else if (percent >= 80)
         {
             letter = "B";
         }
-        else if (grade >= 70)
+        else if (percent >= 70)
         {
             letter = "C";
         }
-        else if (grade >= 60)
+        else if (percent >= 60)
         {
             letter = "D";
         }
@@ -32,26 +33,18 @@ class Program
             letter = "F";
         }
 
-        int lastDigit = grade % 10;
+        // Display letter grade
+        Console.WriteLine($"Your grade is: {letter}");
 
-        if (lastDigit>= 7)
+        // REQUIRED IF-ELSE (pass/fail message)
+        if (percent >= 70)
         {
-            sign = "+";
+            Console.WriteLine("Congratulations! You passed the course.");
         }
-        else if (lastDigit < 3)
+        else 
         {
-            sign ="-";
-        }
-
-        if (letter =="A" && sign == "+")
-        {
-            sign = "";
+            Console.WriteLine("Better luck next time!");
         }
 
-        if (letter == "F")
-        {
-            sign = "";
-        }
-        Console.WriteLine($"Your grade is {letter}{sign}");
     }
 }
