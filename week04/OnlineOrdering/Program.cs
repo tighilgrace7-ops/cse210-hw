@@ -4,6 +4,57 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+        // Order 1 (USA)
+
+        Address address1 = new Address("123 Main Street", "Phoenix", "Arizona", "USA");
+
+        Customer customer1 = new Customer("John Smith", address1);
+
+        Order order1 = new Order(customer1);
+
+        order1.AddProduct(new Product("Laptop", "P100",800,1));
+
+        order1.AddProduct(new Product("Mouse", "P101",25,2));
+
+        order1.AddProduct(new Product("Keyboard", "P102",50,1));
+        
+
+        //Order 2 (International)
+
+        Address address2 = new Address("15 Victoria Road","Lagos", "Lagos State", "Nigeria");
+
+        Customer customer2 = new Customer("Grace Tighil", address2);
+
+        Order order2 = new Order(customer2);
+
+        order2.AddProduct(new Product("Phone", "P200",500,1));
+
+        order2.AddProduct(new Product("Headphones", "P201",75,2));
+
+        order2.AddProduct(new Product("Charger", "P202",20,3));
+
+        // Display Order 1
+
+        Console.WriteLine("===== ORDER 1 =====");
+
+        Console.WriteLine("\nPacking Label:");
+        Console.WriteLine(order1.GetPackingLabel());
+
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine(order1.GetShippingLabel());
+
+        Console.WriteLine($"\nTotal Cost: ${order1.CalculateTotalcost()}");
+
+        // Display Order 2
+
+        Console.WriteLine("\n===== ORDER 2 =====");
+
+        Console.WriteLine("\nPacking Label:");
+        Console.WriteLine(order2.GetPackingLabel());
+
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine(order2.GetShippingLabel());
+
+        Console.WriteLine($"\nTotal Cost: ${order2.CalculateTotalcost()}");
     }
 }
