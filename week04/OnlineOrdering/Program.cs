@@ -8,7 +8,7 @@ class Program
 
         Address address1 = new Address("123 Main Street", "Phoenix", "Arizona", "USA");
 
-        Customer customer1 = new Customer("John Smith", address1);
+        Customer customer1 = new Customer("Grace Tighil", address1);
 
         Order order1 = new Order(customer1);
 
@@ -23,7 +23,7 @@ class Program
 
         Address address2 = new Address("15 Victoria Road","Lagos", "Lagos State", "Nigeria");
 
-        Customer customer2 = new Customer("Grace Tighil", address2);
+        Customer customer2 = new Customer("John Smith", address2);
 
         Order order2 = new Order(customer2);
 
