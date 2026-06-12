@@ -1,0 +1,2 @@
+0
+SimpleGoal:1, finish a marathon race, 1000, False
